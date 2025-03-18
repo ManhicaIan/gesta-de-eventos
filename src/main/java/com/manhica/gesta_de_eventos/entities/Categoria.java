@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,4 +24,6 @@ public class Categoria {
     @Column(columnDefinition = "TEXT")
     private String descricao;
 
+    @OneToMany(mappedBy = "categoria")
+    private List<Actividade> actividades = new ArrayList<>();
 }

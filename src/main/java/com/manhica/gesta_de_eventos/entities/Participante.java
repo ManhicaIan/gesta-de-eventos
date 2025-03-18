@@ -3,6 +3,9 @@ package com.manhica.gesta_de_eventos.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,4 +21,9 @@ public class Participante {
 
     @Column(unique = true)
     private String email;
+
+    @ManyToMany(mappedBy = "participantes")
+    private Set<Actividade> actividades = new HashSet<>();
+
+
 }

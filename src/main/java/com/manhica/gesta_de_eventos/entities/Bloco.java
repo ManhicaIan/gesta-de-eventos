@@ -26,4 +26,7 @@ public class Bloco {
     @Column(columnDefinition = "TIMESTAMP")
     private Instant fim;
 
+    @ManyToOne
+    @JoinColumn(name = "actividade_id")
+    private Actividade actividade;
 }
