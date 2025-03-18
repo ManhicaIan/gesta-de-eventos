@@ -1,10 +1,7 @@
 package com.manhica.gesta_de_eventos.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.Instant;
 
@@ -14,10 +11,12 @@ import java.time.Instant;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_bloco")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Bloco {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(columnDefinition = "TIMESTAMP")

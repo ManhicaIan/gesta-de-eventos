@@ -12,10 +12,12 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_participante")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Participante {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
     private String nome;
 

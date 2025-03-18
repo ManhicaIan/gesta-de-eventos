@@ -1,10 +1,7 @@
 package com.manhica.gesta_de_eventos.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +12,12 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_categoria")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(columnDefinition = "TEXT")

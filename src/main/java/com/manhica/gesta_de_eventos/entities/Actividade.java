@@ -1,10 +1,7 @@
 package com.manhica.gesta_de_eventos.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -17,10 +14,12 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_actividade")
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Actividade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
     private String nome;
 
