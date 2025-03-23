@@ -8,4 +8,4 @@ bin/*
 .kitchen/
 .kitchen.local.yml
 .idea
-.mvn/wrapper
+.mvn
